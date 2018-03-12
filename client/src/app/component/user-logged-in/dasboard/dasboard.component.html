@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="example-container mat-elevation-z8">
+
+        <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+            </mat-form-field>
+        </div>
+
+        <mat-table #table [dataSource]="dataSource" matSort class="mat-table">
+
+
+            <!-- Full Name Column -->
+            <ng-container matColumnDef="fullname">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.fullname}} </mat-cell>
+            </ng-container>
+
+            <!-- Username Column -->
+            <ng-container matColumnDef="username">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Username </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+            </ng-container>
+
+            <!-- Email Column -->
+            <ng-container matColumnDef="email">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Email </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+            </ng-container>
+
+            <!-- Mobile No -->
+            <ng-container matColumnDef="phno">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.phno}} </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef=" let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
+        </mat-table>
+    </div>
+</div>

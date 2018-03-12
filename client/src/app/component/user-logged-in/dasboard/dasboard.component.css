@@ -1,0 +1,19 @@
+mat-header-cell {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@media(max-width:767px) {
+    .mat-header-cell {
+        font-size: 14px;
+    }
+}
+
+.example-header {
+    padding: 15px 25px;
+}
+
+mat-row {
+    cursor: pointer;
+}

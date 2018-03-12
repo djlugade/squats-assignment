@@ -1,0 +1,18 @@
+<div class="container mt-3" *ngIf="showMsg">
+    <div class="row my-3">
+        <button type="button" mat-raised-button class="mr-3 w-25" color="primary" (click)="order = '-date'">ASC</button>
+        <button type="button" mat-raised-button class="mr-3 w-25" color="primary" (click)="order = 'date'">DESC</button>
+    </div>
+
+    <div class="row justify-content-center" *ngFor="let data of blogData">
+        <div class="card mb-4" *ngFor="let b of data.blog | sortGridByDate: order ">
+            <div class="card-body">
+                <h5 class="card-title">{{b.title}}</h5>
+                <p class="card-text">{{b.msg}}</p>
+                <p class="date">- {{b.date | date: 'mediumDate'}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h1 class="add-post" *ngIf="!showMsg">Please <b class="texr-uppercase">Add post</b></h1>

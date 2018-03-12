@@ -1,0 +1,69 @@
+<div class="form-wrapper mt-5">
+    <h1 class="mt-4">Registraion</h1>
+    <form #userRegister="ngForm" name="form" (ngSubmit)="userRegister.form.valid && registerUser(userRegister)" novalidate>
+        <div class="row">
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input matInput placeholder="Full Name" name="fullname" #fullname="ngModel" ngModel required>
+                </mat-form-field>
+                <div *ngIf="userRegister.submitted || fullname.touched && !fullname.valid">
+                    <span class="has-error" *ngIf="fullname.errors?.required">Full Name is required</span>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input matInput placeholder="User Name" name="username" #username="ngModel" ngModel required>
+                </mat-form-field>
+                <p *ngIf="userRegister.submitted || username.touched && !username.valid">
+                    <span class="has-error" *ngIf="username.errors?.required">Username is required</span>
+                </p>
+            </div>
+
+            <div class="col-sm-12">
+                <mat-form-field>
+                    <input matInput placeholder="Email" name="email" #email="ngModel" ngModel email required>
+                </mat-form-field>
+                <p *ngIf="userRegister.submitted || email.touched && !email.valid">
+                    <span class="has-error" *ngIf="email.errors?.email">Enter correct email ID</span>
+                </p>
+            </div>
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input matInput placeholder="Password" type="password" name="password" #password="ngModel" ngModel minlength="7" required>
+                </mat-form-field>
+                <p *ngIf="userRegister.submitted || password.touched && !password.valid">
+                    <span class="has-error" *ngIf="password.errors?.minlength">Password min length is 7</span>
+                    <span class="has-error" *ngIf="password.errors?.required">Password is required</span>
+                </p>
+            </div>
+
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input matInput placeholder="confirm Password" type="password" name="confpassword" #confpassword="ngModel" ngModel [equalTo]="password" required>
+                </mat-form-field>
+                <p *ngIf="userRegister.submitted || confpassword.touched && !confpassword.valid">
+                    <span class="has-error" *ngIf="confpassword.errors?.equalTo">Confirm Password should same as password</span>
+                    <span class="has-error" *ngIf="confpassword.errors?.required">Confirm Password is required</span>
+                </p>
+            </div>
+
+            <div class="col-sm-6">
+                <mat-form-field>
+                    <input matInput placeholder="Phone" type="text" name="phno" #phno="ngModel" ngModel minlength="10" number required>
+                </mat-form-field>
+                <p *ngIf="userRegister.submitted || phno.touched && !phno.valid">
+                    <span class="has-error" *ngIf="phno.errors?.minlength">Phone number min length is 10</span>
+                    <span class="has-error" *ngIf="phno.errors?.number">Phone number should have number</span>
+                    <span class="has-error" *ngIf="phno.errors?.required">Phone number is required</span>
+                </p>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="row justify-content-center mt-3">
+                    <button mat-raised-button color="accent" class=" col-4 m-auto rounded">Submit</button>
+                    <button mat-raised-button color="warn" class=" col-4 m-auto rounded">Reset</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

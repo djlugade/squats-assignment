@@ -1,0 +1,138 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+$color-yellow: #ffd740;
+.mat-form-field {
+    display: block !important;
+}
+
+body {
+    font-size: 16px;
+    background: #f1f1f1;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+a {
+    cursor: pointer;
+    &:hover {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+// material css overide
+.mat-form-field,
+.mat-button,
+.mat-fab,
+.mat-icon-button,
+.mat-mini-fab,
+.mat-raised-button,
+.mat-expansion-panel-header {
+    font-family: 'Roboto', sans-serif;
+}
+
+.mat-form-field {
+    width: 100%;
+}
+
+.mat-focused .mat-input-placeholder {
+    color: $color-yellow;
+    font-size: 14px;
+}
+
+.mat-input-ripple {
+    background-color: $color-yellow;
+}
+
+.mat-dialog-container {
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    background: #fff;
+    border-radius: 6px !important;
+    border-top: 8px solid $color-yellow;
+}
+
+.form-wrapper {
+    padding: 0 20px 25px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+    background: #fff;
+    border-radius: 6px !important;
+    border-top: 8px solid $color-yellow;
+    margin: 0 auto 20px;
+    width: 600px;
+    @media(max-width: 767px) {
+        width: 400px;
+    }
+    @media(max-width:480px) {
+        width: 320px;
+    }
+    .mat-form-field-label-wrapper {
+        font-size: 14px;
+    }
+    h1 {
+        text-align: center;
+        color: #000;
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+    .ng-star-inserted {
+        line-height: 14px;
+    }
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.has-error {
+    position: relative;
+    top: -17px;
+    display: inline-block;
+    color: #c12a2a;
+    font-size: 12px;
+}
+
+button:focus {
+    outline: 0px dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+}
+
+.flash-message {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    width: 25%;
+    text-align: center;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    animation: slideDown 0.3s ease-in;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, .56), 0 4px 25px 0 rgba(0, 0, 0, .12), 0 8px 10px -5px rgba(0, 0, 0, .2);
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        bottom: -69px
+    }
+    to {
+        opacity: 1;
+        bottom: 10px
+    }
+}

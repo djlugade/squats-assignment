@@ -1,0 +1,37 @@
+.wrap {
+    margin: 0 auto;
+    width: 100%;
+}
+
+.logo {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    transform: translate(0, 35%);
+}
+
+.logo p {
+    color: #272727;
+    font-size: 40px;
+    margin-top: 1px;
+}
+
+.logo p span {
+    color: lightgreen;
+}
+
+.logo a {
+    color: #000;
+    font-size: 24px;
+    display: block;
+    margin-top: 20px;
+}
+
+@media(max-width:500px) {
+    .logo {
+        width: 90%;
+    }
+    .logo img {
+        width: 100%;
+    }
+}
